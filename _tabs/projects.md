@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 프로젝트
+title: Projects
 permalink: /projects/
 icon: fas fa-layer-group
 order: 1

@@ -1,6 +1,6 @@
 ---
 layout: tags
-title: 태그
+title: Tags
 permalink: /tags/
 icon: fas fa-tags
 order: 4

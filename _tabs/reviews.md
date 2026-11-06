@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 논문 리뷰
+title: Reviews
 permalink: /reviews/
 icon: fas fa-book-open
 order: 2

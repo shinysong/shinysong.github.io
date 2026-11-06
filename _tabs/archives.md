@@ -1,6 +1,6 @@
 ---
 layout: archives
-title: 아카이브
+title: Archives
 permalink: /archives/
 icon: fas fa-archive
 order: 5

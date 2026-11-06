@@ -19,11 +19,24 @@ body, h1, h2, h3, h4, h5, h6, .site-title, .site-subtitle {
 }
 
 .content {
-  max-width: 68ch;
+  max-width: 78ch;
   line-height: 1.72;
   word-break: keep-all;
   overflow-wrap: anywhere;
   text-wrap: pretty;
+}
+
+.content.portfolio-main {
+  max-width: 100%;
+}
+
+/* Override Chirpy's default white-space: nowrap on table cells so tables wrap cleanly without horizontal dragging */
+.table-wrapper > table thead th,
+.table-wrapper > table tbody tr td {
+  white-space: normal !important;
+  word-break: keep-all;
+  line-height: 1.6;
+  vertical-align: top;
 }
 
 .content h1, .content h2, .content h3, #post-list .card-title {

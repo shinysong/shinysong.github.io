@@ -1,6 +1,6 @@
 ---
 layout: categories
-title: 카테고리
+title: Categories
 permalink: /categories/
 icon: fas fa-stream
 order: 3

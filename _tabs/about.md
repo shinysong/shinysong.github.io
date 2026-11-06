@@ -1,5 +1,5 @@
 ---
-title: 소개
+title: About
 permalink: /about/
 icon: fas fa-user
 order: 6
@@ -23,12 +23,12 @@ order: 6
 - **데이터 수집과 분석**: 다양한 데이터 소스로부터 데이터 수집, 정제, 분석, 지식 추출
 - **엔지니어링**: 지식그래프 구축, 검색·검증 파이프라인(GraphRAG), API 및 웹 애플리케이션 개발
 
-| Language | Framework | Database | Tools / Etc |
-|---|---|---|---|
-| Python | Docker | MySQL / PostgreSQL | Git |
-| JavaScript | Django | Virtuoso / Blazegraph | Linux / Ubuntu |
-| SQL | Vue.js | Neo4j (Cypher / n10s) | Figma |
-| SPARQL | Elasticsearch | FAISS | QGIS |
+| 구분 | 기술 스택 |
+|---|---|
+| **Language** | Python, JavaScript, SQL, SPARQL, Cypher |
+| **Framework** | Docker, Django, Vue.js, Elasticsearch |
+| **Database** | ClickHouse, MySQL, PostgreSQL, Virtuoso, Blazegraph, Neo4j |
+| **Tools / BI** | Metabase, Git, Linux/Ubuntu, Figma, QGIS |
 
 ---
 
