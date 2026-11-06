@@ -1,5 +1,5 @@
 ---
-title: SHACL 업데이트 검증 리뷰 — 데이터를 바꾸기 전에 제약 보존을 판단하기
+title: 'SHACL 업데이트 검증 리뷰: 데이터를 바꾸기 전에 제약 보존을 판단하기'
 date: 2026-11-05 09:00:00 +0900
 categories:
 - Paper Review

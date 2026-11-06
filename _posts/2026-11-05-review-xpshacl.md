@@ -1,5 +1,5 @@
 ---
-title: xpSHACL 리뷰 — 검증 실패를 사람이 이해할 수 있는 설명으로 바꾸기
+title: 'xpSHACL 리뷰: 검증 실패를 사람이 이해할 수 있는 설명으로 바꾸기'
 date: 2026-11-05 09:00:00 +0900
 categories:
 - Paper Review

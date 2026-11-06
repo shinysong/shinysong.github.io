@@ -1,5 +1,5 @@
 ---
-title: Wessel 외 논문 리뷰 — 배터리 전극의 식별과 생산 이력 추적
+title: 'Wessel 외 논문 리뷰: 배터리 전극의 식별과 생산 이력 추적'
 date: 2026-10-29 09:00:00 +0900
 categories:
 - Paper Review

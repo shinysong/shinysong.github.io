@@ -1,5 +1,5 @@
 ---
-title: REGAE 리뷰 — 예시를 주고받으며 정규표현식을 만드는 도구
+title: 'REGAE 리뷰: 예시를 주고받으며 정규표현식을 만드는 도구'
 date: 2026-10-16 09:00:00 +0900
 categories:
 - Paper Review

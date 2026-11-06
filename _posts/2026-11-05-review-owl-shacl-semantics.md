@@ -1,5 +1,5 @@
 ---
-title: OWL과 SHACL 의미론 리뷰 — 추론한 그래프를 무엇으로 검증할 것인가
+title: 'OWL과 SHACL 의미론 리뷰: 추론한 그래프를 무엇으로 검증할 것인가'
 date: 2026-11-05 09:00:00 +0900
 categories:
 - Paper Review

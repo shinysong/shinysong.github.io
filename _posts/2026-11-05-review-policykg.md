@@ -1,5 +1,5 @@
 ---
-title: PolicyKG 리뷰 — 정책 문장의 의무·허용·금지를 SHACL로 옮기기
+title: 'PolicyKG 리뷰: 정책 문장의 의무·허용·금지를 SHACL로 옮기기'
 date: 2026-11-05 09:00:00 +0900
 categories:
 - Paper Review

@@ -1,5 +1,5 @@
 ---
-title: GraphRAG-Bench 리뷰 — 질문 난도와 검색·생성 비용을 나눠 보는 평가
+title: 'GraphRAG-Bench 리뷰: 질문 난도와 검색·생성 비용을 나눠 보는 평가'
 date: 2026-11-05 09:00:00 +0900
 categories:
 - Paper Review

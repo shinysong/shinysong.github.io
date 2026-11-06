@@ -1,5 +1,5 @@
 ---
-title: shacl-test 도구 리뷰 — RDF 사례와 검증 보고서를 반복 검사하는 방법
+title: 'shacl-test 도구 리뷰: RDF 사례와 검증 보고서를 반복 검사하는 방법'
 date: 2026-10-16 09:00:00 +0900
 categories:
 - Paper Review

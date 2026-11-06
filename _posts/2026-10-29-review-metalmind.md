@@ -1,5 +1,5 @@
 ---
-title: MetalMind 논문 리뷰 — 금속 적층제조 매뉴얼에서 작업자 지원까지
+title: 'MetalMind 논문 리뷰: 금속 적층제조 매뉴얼에서 작업자 지원까지'
 date: 2026-10-29 09:00:00 +0900
 categories:
 - Paper Review

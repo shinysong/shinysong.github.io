@@ -1,5 +1,5 @@
 ---
-title: SHACL Guru 도구 리뷰 — VS Code에서 규칙을 생성하고 설명받는 과정
+title: 'SHACL Guru 도구 리뷰: VS Code에서 규칙을 생성하고 설명받는 과정'
 date: 2026-10-16 09:00:00 +0900
 categories:
 - Paper Review

@@ -1,5 +1,5 @@
 ---
-title: Meyers 외 논문 리뷰 — 제조 데이터를 연결하는 지식 그래프와 외부 계산
+title: 'Meyers 외 논문 리뷰: 제조 데이터를 연결하는 지식 그래프와 외부 계산'
 date: 2026-10-29 09:00:00 +0900
 categories:
 - Paper Review

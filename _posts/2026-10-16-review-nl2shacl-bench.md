@@ -1,5 +1,5 @@
 ---
-title: NL2SHACL-Bench 리뷰 — 자연어로 만든 검증 규칙을 평가하는 전체 과정
+title: 'NL2SHACL-Bench 리뷰: 자연어로 만든 검증 규칙을 평가하는 전체 과정'
 date: 2026-10-16 09:00:00 +0900
 categories:
 - Paper Review

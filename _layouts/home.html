@@ -49,16 +49,16 @@ layout: default
 {% if paginator.page == 1 %}
 <header class="editorial-intro">
   <p class="editorial-bio">
-    <strong>송채은 (Shiny Song)</strong> — 지식 그래프(RDF·LPG), SHACL 검증, GraphRAG와 관련된 논문 및 실험 기록을 모아 두는 연구 노트입니다.
+    <strong>송채은 (Chaeeun Song)</strong> · 온톨로지와 지식그래프 구축, 데이터 수집·분석, GraphRAG 엔지니어링을 연구하고 기록합니다.
   </p>
   <nav class="editorial-links" aria-label="주요 작업 바로가기">
+    <a href="{{ '/about/' | relative_url }}">소개 · 논문 · 표준</a>
+    <span class="sep">·</span>
+    <a href="{{ '/projects/' | relative_url }}">프로젝트</a>
+    <span class="sep">·</span>
     <a href="https://shinysong.github.io/shacl-graphrag/">SHACL-GraphRAG 연구실 ↗</a>
     <span class="sep">·</span>
-    <a href="https://shinysong.github.io/shacl-graphrag/experiments/actionable-evidence-demo/">데모 ↗</a>
-    <span class="sep">·</span>
-    <a href="https://shinysong.github.io/shacl-graphrag/experiments/seminar/seminar.pdf">세미나 슬라이드 (PDF) ↗</a>
-    <span class="sep">·</span>
-    <a href="{{ '/projects/' | relative_url }}">프로젝트 목록</a>
+    <a href="https://chaeeunsong.tistory.com/">Tistory 블로그 ↗</a>
   </nav>
 </header>
 {% endif %}

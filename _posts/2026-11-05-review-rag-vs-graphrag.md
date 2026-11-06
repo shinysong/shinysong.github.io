@@ -1,5 +1,5 @@
 ---
-title: RAG vs. GraphRAG 리뷰 — 상세 질문·관계 질문·답 없는 질문의 차이
+title: 'RAG vs. GraphRAG 리뷰: 상세 질문·관계 질문·답 없는 질문의 차이'
 date: 2026-11-05 09:00:00 +0900
 categories:
 - Paper Review

@@ -1,5 +1,5 @@
 ---
-title: Shapes from Examples 리뷰 — 그래프 사례에서 검증 규칙을 학습하는 이론
+title: 'Shapes from Examples 리뷰: 그래프 사례에서 검증 규칙을 학습하는 이론'
 date: 2026-10-16 09:00:00 +0900
 categories:
 - Paper Review

@@ -1,27 +1,62 @@
 ---
 title: 소개
 permalink: /about/
-icon: fas fa-info-circle
+icon: fas fa-user
 order: 5
 ---
 
-**송채은 (Shiny Song)**
+## About Me
 
-지식 그래프(RDF·LPG), 데이터 제약 검증(SHACL), GraphRAG와 관련된 논문 및 실험을 기록하는 개인 연구 블로그입니다.
+**송채은 (Chaeeun Song)**  
+온톨로지·지식그래프 모델링, 시맨틱 웹 표준(RDF·SHACL), 공공데이터·메타데이터 표준화, 그리고 근거 기반 질의응답(GraphRAG)을 연구하고 개발합니다.
 
-## 관심 분야
-
-- **지식 그래프 및 스키마 설계**: RDF/SPARQL, Neo4j(Cypher·n10s), RDF↔속성 그래프 변환
-- **데이터 품질과 형식 제약**: W3C SHACL, OWL-RL, 메타데이터 카탈로그 정합성 검증
-- **근거 기반 질의응답(GraphRAG)**: 하이브리드 검색, 생성 전 의미 필터, 생성 후 검증 보고서 피드백
-- **산업 데이터 추적성**: 제조 공정 변경 영향도, 배터리·전장 품질 이력 추적, 금융 법인 관계(GLEIF)
-
-## 링크
-
+- **Email**: [chaeeunsong.hello@gmail.com](mailto:chaeeunsong.hello@gmail.com)
 - **GitHub**: [github.com/shinysong](https://github.com/shinysong)
-- **SHACL-GraphRAG 연구실**: [shinysong.github.io/shacl-graphrag](https://shinysong.github.io/shacl-graphrag/)
-- **이전 블로그 (Tistory)**: [chaeeunsong.tistory.com](https://chaeeunsong.tistory.com/)
+- **Blog (Tistory)**: [chaeeunsong.tistory.com](https://chaeeunsong.tistory.com/)
+- **Lab**: [HIKE Lab (중앙대학교)](http://hike.cau.ac.kr/) · [SHACL-GraphRAG 실험실](https://shinysong.github.io/shacl-graphrag/)
 
-## 작성 원칙
+---
 
-각 글은 원문과 공개된 자료를 바탕으로 작성하며, 저자들이 보고한 결과와 직접 실험해 확인한 결과를 구분합니다. 원문에서 가져온 그림과 표는 출처·라이선스·페이지 좌표(`provenance.json`)를 함께 남깁니다.
+## Skills
+
+- **온톨로지와 지식그래프 구축**: 데이터 모델 설계, 지식 모델링, 시맨틱 웹 표준(RDF, RDFS, OWL, SHACL) 활용
+- **데이터 수집과 분석**: 다양한 데이터 소스로부터 데이터 수집, 정제, 분석, 지식 추출
+- **엔지니어링**: 지식그래프 구축, 검색·검증 파이프라인(GraphRAG), API 및 웹 애플리케이션 개발
+
+| Language | Framework | Database | Tools / Etc |
+|---|---|---|---|
+| Python | Docker | MySQL / PostgreSQL | Git |
+| JavaScript | Django | Virtuoso / Blazegraph | Linux / Ubuntu |
+| SQL | Vue.js | Neo4j (Cypher / n10s) | Figma |
+| SPARQL | Elasticsearch | FAISS | QGIS |
+
+---
+
+## Education
+
+- **중앙대학교 일반대학원 문헌정보학과 (정보학 전공)** 박사 수료 (2023.03 ~ 2025.02)
+- **중앙대학교 일반대학원 문헌정보학과 (정보학 전공)** 석사 졸업 (2021.03 ~ 2023.02)
+
+---
+
+## Publications
+
+### Journals
+
+1. 박하람, 강지우, **송채은**, 안지은, 이정윤, 장소정, 조하연, 차화준, 김학래. (2024). “FAIR 데이터 원칙을 적용한 국내 디지털 아카이브 평가와 개선 방향.” *한국기록관리학회지*, 24(4), 113–134. [doi:10.14404/JKSARM.2024.24.4.113](https://doi.org/10.14404/JKSARM.2024.24.4.113)
+2. **송채은**, 김학래. (2024). “기관 정보의 의미적 연계를 위한 지식모델 설계와 지식그래프 구축.” *디지털콘텐츠학회논문지 (Journal of Digital Contents Society)*, 25(10), 2995–3004. [doi:10.9728/dcs.2024.25.10.2995](https://doi.org/10.9728/dcs.2024.25.10.2995)
+3. 박하람, **송채은**, 김장원, 김학래. (2024). “주소 데이터의 상호운용을 위한 주소 모델에 대한 논의.” *디지털콘텐츠학회논문지*, 25(7), 1891–1900. [doi:10.9728/dcs.2024.25.7.1891](https://doi.org/10.9728/dcs.2024.25.7.1891)
+4. **송채은**, 박하람, 김학래. (2024). “ISO 19160-1:2015 개념모델에 대한 분석과 이해.” *디지털콘텐츠학회논문지*, 25(5), 1359–1372. [doi:10.9728/dcs.2024.25.5.1359](https://doi.org/10.9728/dcs.2024.25.5.1359)
+5. **송채은**, 김학래. (2023). “도서관 관련 공공데이터의 관리와 활용에 대한 탐색적 분석.” *디지털콘텐츠학회논문지*, 24(12), 3089–3097. [doi:10.9728/dcs.2023.24.12.3089](https://doi.org/10.9728/dcs.2023.24.12.3089)
+6. **Song, Chaeeun**, and Haklae Kim. (2022). “Considerations in Releasing Public Data: The Case of Local Governments in Korea.” *Journal of Information Science*. [doi:10.1177/01655515221106636](https://doi.org/10.1177/01655515221106636)
+7. **송채은**, 김학래. (2022). “지방자치단체의 공공데이터 개방 현황 분석과 개선방안.” *디지털콘텐츠학회논문지*, 23(4), 697–705. [doi:10.9728/dcs.2022.23.4.697](https://doi.org/10.9728/dcs.2022.23.4.697)
+8. 김동준, 김현지, **송채은**, 양지우, 김학래. (2021). “공공데이터포털에 공개된 지방자치단체의 공공데이터 활용 방안.” *디지털콘텐츠학회논문지*, 22(3), 445–452. [doi:10.9728/dcs.2021.22.3.445](https://doi.org/10.9728/dcs.2021.22.3.445)
+
+### Standards (정보통신단체표준 TTAS)
+
+- 정보통신단체표준(TTAS). “데이터맵 - 제1부: 데이터맵 어휘”
+- 정보통신단체표준(TTAS). “데이터맵 - 제2부: 데이터맵 기술을 위한 가이드라인”
+- 정보통신단체표준(TTAS). “주소지식모델 - 제1부: 주소체계”
+- 정보통신단체표준(TTAS). “주소지식모델 - 제2부: 주소 어휘”
+- 정보통신단체표준(TTAS). “주소지식모델 - 제3부: 웹 URI 체계”
+- 정보통신단체표준(TTAS). “주소지식모델 - 제4부: 행정구역 어휘”
