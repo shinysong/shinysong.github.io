@@ -25,7 +25,6 @@ order: 1
 
 기업·산업 데이터(제조 공정, 금융 GLEIF 법인 관계, YAGO 지식 그래프, BPI 2019 구매 로그)에서 명시적 제약 계층(SHACL·동일 정책 Python 규칙)과 하이브리드 GraphRAG가 의사결정 지원 및 감사(audit) 정확도에 미치는 영향을 단계별로 측정한 연구입니다.
 
-- **바로가기**: [연구실 문서 사이트](https://shinysong.github.io/shacl-graphrag/) · [인터랙티브 데모](https://shinysong.github.io/shacl-graphrag/experiments/actionable-evidence-demo/) · [세미나 슬라이드 (25쪽 PDF)](https://shinysong.github.io/shacl-graphrag/experiments/seminar/seminar.pdf) · [GitHub 저장소](https://github.com/shinysong/shacl-graphrag)
 - **사용 기술**: Python (`uv`), RDFLib, pySHACL, Neo4j (Cypher), FAISS, OpenRouter
 
 | 단계 | 연구 질문 | 구현 메커니즘 | 주요 확인 내용 |

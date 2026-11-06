@@ -13,7 +13,7 @@ order: 6
 - **Email**: [chaeeunsong.hello@gmail.com](mailto:chaeeunsong.hello@gmail.com)
 - **GitHub**: [github.com/shinysong](https://github.com/shinysong)
 - **Blog (Tistory)**: [chaeeunsong.tistory.com](https://chaeeunsong.tistory.com/)
-- **Lab**: [HIKE Lab (중앙대학교)](http://hike.cau.ac.kr/) · [SHACL-GraphRAG 실험실](https://shinysong.github.io/shacl-graphrag/)
+- **Lab**: [HIKE Lab (중앙대학교)](http://hike.cau.ac.kr/)
 
 ---
 
