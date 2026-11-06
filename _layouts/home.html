@@ -47,60 +47,20 @@ layout: default
 {% endif %}
 
 {% if paginator.page == 1 %}
-<section class="portfolio-hero" aria-labelledby="hero-title">
-  <div class="hero-top">
-    <span class="hero-eyebrow">KNOWLEDGE GRAPH · ONTOLOGY · GRAPHRAG</span>
-    <div class="hero-pills">
-      <span class="hero-pill"><i class="fas fa-diagram-project"></i> RDF / LPG / Neo4j</span>
-      <span class="hero-pill"><i class="fas fa-shield-halved"></i> SHACL &amp; Semantic Guardrails</span>
-      <span class="hero-pill"><i class="fas fa-magnifying-glass-chart"></i> Evidence-Grounded AI</span>
-    </div>
-  </div>
-
-  <h1 id="hero-title">구조화된 근거와 제약으로<br>설명 가능한 AI 파이프라인을 설계합니다.</h1>
-  <p class="hero-desc">
-    복잡한 기업·산업 데이터에서 지식 그래프(RDF/LPG), 형식 제약(SHACL), 하이브리드 검색(GraphRAG)이 각각 언제·어디서 실질적인 이득을 주는지 실험하고, 최신 연구 문헌을 비판적으로 분석해 기록합니다.
+<header class="editorial-intro">
+  <p class="editorial-bio">
+    <strong>송채은 (Shiny Song)</strong> — 지식 그래프(RDF·LPG), SHACL 검증, GraphRAG와 관련된 논문 및 실험 기록을 모아 두는 연구 노트입니다.
   </p>
-
-  <div class="bento-grid">
-    <div class="bento-card bento-featured">
-      <div class="bento-badge-row">
-        <span class="bento-tag">FLAGSHIP RESEARCH</span>
-        <span class="bento-meta">2026.10 – Present</span>
-      </div>
-      <h2>SHACL-GraphRAG &amp; 규칙 생명주기 실험실</h2>
-      <p>
-        단순 벡터 검색이나 무조건적인 온톨로지 변환을 넘어, 규칙 반례 게이트·표적 재조회·스키마 진화·사후 검증 보고서(ValidationReport) 주입까지 4단계 생명주기와 하이브리드 GraphRAG를 정량 비교한 연구 프로젝트입니다.
-      </p>
-      <div class="bento-actions">
-        <a href="https://shinysong.github.io/shacl-graphrag/" class="bento-btn primary">연구실 홈 <i class="fas fa-arrow-up-right-from-square fa-xs"></i></a>
-        <a href="https://shinysong.github.io/shacl-graphrag/experiments/actionable-evidence-demo/" class="bento-btn">인터랙티브 데모</a>
-        <a href="https://shinysong.github.io/shacl-graphrag/experiments/seminar/seminar.pdf" class="bento-btn">25p 세미나 PDF</a>
-        <a href="https://github.com/shinysong/shacl-graphrag" class="bento-btn"><i class="fab fa-github"></i> GitHub</a>
-      </div>
-    </div>
-
-    <div class="bento-card">
-      <div class="bento-badge-row">
-        <span class="bento-tag accent">ARCHIVE</span>
-        <span class="bento-meta">18 Reviews · 6 Topics</span>
-      </div>
-      <h2>논문 &amp; 도구 심층 리뷰</h2>
-      <p>
-        GraphRAG 벤치마크, RDF↔LPG 폴리글랏 매핑(rdf2pg), 의료 온톨로지 RAG, OWL/SHACL 의미론, 배터리·제조 공정 추적성까지 원문 수식·도면 대조와 재현성 관점으로 정리한 리뷰 모음입니다.
-      </p>
-      <div class="bento-actions">
-        <a href="{{ '/categories/' | relative_url }}" class="bento-btn">주제별 분류 보기 <i class="fas fa-arrow-right fa-xs"></i></a>
-        <a href="{{ '/projects/' | relative_url }}" class="bento-btn">전체 프로젝트 <i class="fas fa-arrow-right fa-xs"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider px-xl-1">
-  <span class="section-label"><i class="fas fa-book-open me-1"></i> 최신 연구 리뷰 &amp; 아티클</span>
-  <a href="{{ '/archives/' | relative_url }}" class="section-more">전체 글 목록 ({{ site.posts.size }}) <i class="fas fa-angle-right"></i></a>
-</div>
+  <nav class="editorial-links" aria-label="주요 작업 바로가기">
+    <a href="https://shinysong.github.io/shacl-graphrag/">SHACL-GraphRAG 연구실 ↗</a>
+    <span class="sep">·</span>
+    <a href="https://shinysong.github.io/shacl-graphrag/experiments/actionable-evidence-demo/">데모 ↗</a>
+    <span class="sep">·</span>
+    <a href="https://shinysong.github.io/shacl-graphrag/experiments/seminar/seminar.pdf">세미나 슬라이드 (PDF) ↗</a>
+    <span class="sep">·</span>
+    <a href="{{ '/projects/' | relative_url }}">프로젝트 목록</a>
+  </nav>
+</header>
 {% endif %}
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
@@ -121,6 +81,7 @@ layout: default
                 | replace: '//', '/'
               %}
             {% endunless %}
+
           {% endif %}
 
           {% if post.image.lqip %}

@@ -12,221 +12,122 @@
 {%- endif -%}
 ';
 
-/* append your custom style below */
+/* Editorial Typography & Reading System */
 
 body, h1, h2, h3, h4, h5, h6, .site-title, .site-subtitle {
-  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
-.content { line-height: 1.85; word-break: keep-all; overflow-wrap: anywhere; }
-.content pre { word-break: normal; overflow-wrap: normal; }
-#sidebar .site-title { font-size: 1.45rem; letter-spacing: -.04em; }
-#sidebar .site-subtitle { font-size: .87rem; font-style: normal !important; line-height: 1.7; word-break: keep-all; }
-#sidebar #avatar { border-radius: 24%; }
 
-/* Portfolio Hero & Bento Grid (al-folio / Astrofy / Gitfolio inspired) */
-.portfolio-hero {
-  padding: 1.2rem 0.25rem 1.8rem;
-  margin-bottom: 1.6rem;
+/* 1. Long-form reading measure (62-68ch) & line height */
+.content {
+  max-width: 66ch;
+  line-height: 1.72;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+.content h1, .content h2, .content h3, #post-list .card-title {
+  text-wrap: balance;
+  letter-spacing: -0.025em;
+}
+
+.content h2 {
+  margin-top: 2.4rem;
+  margin-bottom: 0.9rem;
+  font-weight: 700;
+}
+
+.content h3 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.65rem;
+  font-weight: 600;
+}
+
+.content p {
+  margin-bottom: 1.15rem;
+}
+
+/* Keep tables, figures, and code blocks comfortable within or slightly wider than prose */
+.content .table-wrapper,
+.content pre,
+.content figure {
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+#sidebar .site-title {
+  font-size: 1.38rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+#sidebar .site-subtitle {
+  font-size: 0.85rem;
+  font-style: normal !important;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+
+#sidebar #avatar {
+  border-radius: 20%;
+}
+
+/* 2. Minimal al-folio style editorial header on Home */
+.editorial-intro {
+  max-width: 66ch;
+  padding: 0.4rem 0.25rem 1.25rem;
+  margin-bottom: 1.25rem;
   border-bottom: 1px solid var(--main-border-color);
 }
-.hero-top {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.6rem;
-  margin-bottom: 0.75rem;
-}
-.hero-eyebrow {
-  color: var(--link-color);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.hero-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-.hero-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-muted-color);
-  background: var(--card-bg);
-  border: 1px solid var(--main-border-color);
-  border-radius: 999px;
-  padding: 0.2rem 0.65rem;
-}
-.portfolio-hero h1 {
-  font-size: clamp(1.65rem, 2.8vw, 2.15rem);
-  font-weight: 800;
-  line-height: 1.38;
-  letter-spacing: -0.04em;
-  margin: 0.4rem 0 0.75rem;
-  color: var(--heading-color);
-}
-.hero-desc {
-  max-width: 44rem;
-  color: var(--text-muted-color);
+
+.editorial-bio {
   font-size: 0.96rem;
-  line-height: 1.78;
-  margin-bottom: 1.35rem;
+  line-height: 1.68;
+  color: var(--text-color);
+  margin: 0 0 0.55rem;
   word-break: keep-all;
 }
-.bento-grid {
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: 1rem;
-}
-.bento-card {
+
+.editorial-links {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: var(--card-bg);
-  border: 1px solid var(--main-border-color);
-  border-radius: 0.85rem;
-  padding: 1.25rem 1.35rem;
-  box-shadow: var(--card-shadow);
-  transition: transform 0.18s ease, border-color 0.18s ease;
-}
-.bento-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--link-color);
-}
-.bento-featured {
-  background: linear-gradient(145deg, var(--card-bg) 0%, rgba(128, 128, 128, 0.05) 100%);
-}
-.bento-badge-row {
-  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.55rem;
+  gap: 0.35rem 0.55rem;
+  font-size: 0.86rem;
 }
-.bento-tag {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 0.18rem 0.55rem;
-  border-radius: 0.35rem;
-  background: rgba(66, 133, 244, 0.14);
+
+.editorial-links a {
+  color: var(--text-muted-color);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease;
+}
+
+.editorial-links a:hover {
   color: var(--link-color);
 }
-.bento-tag.accent {
-  background: rgba(16, 185, 129, 0.14);
-  color: #10b981;
-}
-.bento-meta {
-  font-size: 0.75rem;
+
+.editorial-links .sep {
   color: var(--text-muted-color);
-}
-.bento-card h2 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin: 0 0 0.55rem;
-  letter-spacing: -0.02em;
-  color: var(--heading-color);
-}
-.bento-card p {
-  font-size: 0.88rem;
-  color: var(--text-muted-color);
-  line-height: 1.7;
-  margin-bottom: 1rem;
-  word-break: keep-all;
-}
-.bento-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-top: auto;
-}
-.bento-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.35rem 0.72rem;
-  border-radius: 0.45rem;
-  border: 1px solid var(--main-border-color);
-  color: var(--text-color) !important;
-  text-decoration: none !important;
-  background: transparent;
-  transition: background 0.15s ease, border-color 0.15s ease;
-}
-.bento-btn:hover {
-  border-color: var(--link-color);
-  color: var(--link-color) !important;
-}
-.bento-btn.primary {
-  background: var(--link-color);
-  border-color: var(--link-color);
-  color: #fff !important;
-}
-.bento-btn.primary:hover {
-  opacity: 0.92;
-  color: #fff !important;
-}
-.section-divider {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.85rem;
-}
-.section-label {
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--heading-color);
-  letter-spacing: -0.01em;
-}
-.section-more {
-  font-size: 0.82rem;
-  color: var(--text-muted-color);
-  text-decoration: none;
+  opacity: 0.5;
 }
 
-/* Project showcase cards on /projects/ and /about/ */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.1rem;
-  margin: 1.2rem 0 1.8rem;
-}
-.project-card {
-  background: var(--card-bg);
-  border: 1px solid var(--main-border-color);
-  border-radius: 0.8rem;
-  padding: 1.2rem 1.3rem;
-  box-shadow: var(--card-shadow);
-}
-.project-card h3 {
-  margin-top: 0.2rem !important;
-  margin-bottom: 0.5rem !important;
-  font-size: 1.08rem;
-}
-.project-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-top: 0.75rem;
-}
-.project-badge {
-  font-size: 0.72rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: 0.3rem;
-  border: 1px solid var(--main-border-color);
-  color: var(--text-muted-color);
+/* 3. Clean stacked post list */
+#post-list .card-title {
+  font-size: 1.16rem;
+  font-weight: 650;
+  line-height: 1.5;
 }
 
-#post-list .card-title { font-size: 1.2rem; line-height: 1.55; letter-spacing: -.025em; }
-#post-list .card-text { line-height: 1.8; }
+#post-list .card-text {
+  line-height: 1.68;
+  font-size: 0.93rem;
+}
 
-@media (max-width: 767px) {
-  .bento-grid { grid-template-columns: 1fr; }
-  .portfolio-hero { padding-top: 0.5rem; }
-  .content { font-size: 1rem; }
+@media (max-width: 575px) {
+  .editorial-intro { padding-top: 0.2rem; }
+  .content { font-size: 0.98rem; line-height: 1.68; }
 }
