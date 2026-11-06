@@ -9,9 +9,11 @@ baseurl: ""
 github:
   username: shinysong
 social:
-  name: Shiny Song
+  name: Chaeeun Song
+  email: chaeeunsong.hello@gmail.com
   links:
     - https://github.com/shinysong
+    - https://chaeeunsong.tistory.com/
 avatar: /assets/img/avatar.png
 theme_mode:
 toc: true

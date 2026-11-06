@@ -12,15 +12,14 @@
 {%- endif -%}
 ';
 
-/* Editorial Typography & Reading System */
+/* Editorial Typography & Portfolio Reading System */
 
 body, h1, h2, h3, h4, h5, h6, .site-title, .site-subtitle {
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
 
-/* 1. Long-form reading measure (62-68ch) & line height */
 .content {
-  max-width: 66ch;
+  max-width: 68ch;
   line-height: 1.72;
   word-break: keep-all;
   overflow-wrap: anywhere;
@@ -33,22 +32,23 @@ body, h1, h2, h3, h4, h5, h6, .site-title, .site-subtitle {
 }
 
 .content h2 {
-  margin-top: 2.4rem;
-  margin-bottom: 0.9rem;
+  margin-top: 2.2rem;
+  margin-bottom: 0.85rem;
+  font-size: 1.32rem;
   font-weight: 700;
 }
 
 .content h3 {
-  margin-top: 1.8rem;
-  margin-bottom: 0.65rem;
-  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.08rem;
+  font-weight: 650;
 }
 
 .content p {
-  margin-bottom: 1.15rem;
+  margin-bottom: 1.1rem;
 }
 
-/* Keep tables, figures, and code blocks comfortable within or slightly wider than prose */
 .content .table-wrapper,
 .content pre,
 .content figure {
@@ -74,48 +74,129 @@ body, h1, h2, h3, h4, h5, h6, .site-title, .site-subtitle {
   border-radius: 20%;
 }
 
-/* 2. Minimal al-folio style editorial header on Home */
-.editorial-intro {
-  max-width: 66ch;
-  padding: 0.4rem 0.25rem 1.25rem;
-  margin-bottom: 1.25rem;
-  border-bottom: 1px solid var(--main-border-color);
+/* Portfolio Home Page (al-folio / Notion academic CV style) */
+.portfolio-main {
+  padding-top: 0.5rem;
 }
 
-.editorial-bio {
-  font-size: 0.96rem;
-  line-height: 1.68;
+.portfolio-header h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.03em;
+}
+
+.portfolio-header .en-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-muted-color);
+  margin-left: 0.35rem;
+}
+
+.portfolio-header .lead-bio {
+  font-size: 0.98rem;
+  line-height: 1.7;
   color: var(--text-color);
-  margin: 0 0 0.55rem;
-  word-break: keep-all;
+  margin-bottom: 0.75rem;
 }
 
-.editorial-links {
+.contact-links {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.35rem 0.55rem;
-  font-size: 0.86rem;
+  font-size: 0.88rem;
 }
 
-.editorial-links a {
+.contact-links a {
   color: var(--text-muted-color);
-  text-decoration: underline;
-  text-underline-offset: 0.22em;
-  text-decoration-thickness: 1px;
-  transition: color 0.15s ease;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.editorial-links a:hover {
+.contact-links a:hover {
+  color: var(--link-color);
+  border-bottom-color: var(--link-color);
+}
+
+.contact-links .sep {
+  color: var(--text-muted-color);
+  opacity: 0.45;
+}
+
+.portfolio-main hr {
+  margin: 1.6rem 0;
+  opacity: 0.12;
+}
+
+.portfolio-main section h2 {
+  margin-top: 0;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.section-head h2 {
+  margin-bottom: 0 !important;
+}
+
+.section-head .more-link {
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
+  text-decoration: none;
+}
+
+.section-head .more-link:hover {
   color: var(--link-color);
 }
 
-.editorial-links .sep {
-  color: var(--text-muted-color);
-  opacity: 0.5;
+.pub-list li {
+  margin-bottom: 0.65rem;
+  line-height: 1.65;
+  font-size: 0.93rem;
 }
 
-/* 3. Clean stacked post list */
+.compact-post-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.compact-post-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--main-border-color);
+}
+
+.compact-post-list .post-date {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  color: var(--text-muted-color);
+  flex-shrink: 0;
+}
+
+.compact-post-list .post-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.compact-post-list .pin-tag {
+  font-size: 0.72rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid var(--main-border-color);
+  color: var(--text-muted-color);
+}
+
 #post-list .card-title {
   font-size: 1.16rem;
   font-weight: 650;
@@ -128,6 +209,6 @@ body, h1, h2, h3, h4, h5, h6, .site-title, .site-subtitle {
 }
 
 @media (max-width: 575px) {
-  .editorial-intro { padding-top: 0.2rem; }
   .content { font-size: 0.98rem; line-height: 1.68; }
+  .portfolio-header h1 { font-size: 1.55rem; }
 }

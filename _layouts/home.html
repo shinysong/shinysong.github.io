@@ -4,155 +4,183 @@ layout: default
 
 {% include lang.html %}
 
-{% assign all_pinned = site.posts | where: 'pin', 'true' %}
-{% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
-
-{% assign posts = '' | split: '' %}
-
-<!-- Get pinned posts on current page -->
-
-{% assign visible_start = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign visible_end = visible_start | plus: paginator.per_page %}
-
-{% if all_pinned.size > visible_start %}
-  {% if all_pinned.size > visible_end %}
-    {% assign pinned_size = paginator.per_page %}
-  {% else %}
-    {% assign pinned_size = all_pinned.size | minus: visible_start %}
-  {% endif %}
-
-  {% for i in (visible_start..all_pinned.size) limit: pinned_size %}
-    {% assign posts = posts | push: all_pinned[i] %}
-  {% endfor %}
-{% else %}
-  {% assign pinned_size = 0 %}
-{% endif %}
-
-<!-- Get normal posts on current page -->
-
-{% assign normal_size = paginator.posts | size | minus: pinned_size %}
-
-{% if normal_size > 0 %}
-  {% if pinned_size > 0 %}
-    {% assign normal_start = 0 %}
-  {% else %}
-    {% assign normal_start = visible_start | minus: all_pinned.size %}
-  {% endif %}
-
-  {% assign normal_end = normal_start | plus: normal_size | minus: 1 %}
-
-  {% for i in (normal_start..normal_end) %}
-    {% assign posts = posts | push: all_normal[i] %}
-  {% endfor %}
-{% endif %}
-
 {% if paginator.page == 1 %}
-<header class="editorial-intro">
-  <p class="editorial-bio">
-    <strong>송채은 (Chaeeun Song)</strong> · 온톨로지와 지식그래프 구축, 데이터 수집·분석, GraphRAG 엔지니어링을 연구하고 기록합니다.
-  </p>
-  <nav class="editorial-links" aria-label="주요 작업 바로가기">
-    <a href="{{ '/about/' | relative_url }}">소개 · 논문 · 표준</a>
-    <span class="sep">·</span>
-    <a href="{{ '/projects/' | relative_url }}">프로젝트</a>
-    <span class="sep">·</span>
-    <a href="https://shinysong.github.io/shacl-graphrag/">SHACL-GraphRAG 연구실 ↗</a>
-    <span class="sep">·</span>
-    <a href="https://chaeeunsong.tistory.com/">Tistory 블로그 ↗</a>
-  </nav>
-</header>
-{% endif %}
+<article class="px-1">
+  <div class="content portfolio-main">
+    <header class="portfolio-header">
+      <h1>송채은 <span class="en-name">Chaeeun Song</span></h1>
+      <p class="lead-bio">
+        온톨로지·지식그래프 모델링, 시맨틱 웹 표준(RDF·SHACL), 공공데이터·메타데이터 표준화, 그리고 근거 기반 질의응답(GraphRAG)을 연구하고 개발합니다.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:chaeeunsong.hello@gmail.com"><i class="far fa-envelope fa-fw"></i> chaeeunsong.hello@gmail.com</a>
+        <span class="sep">·</span>
+        <a href="https://github.com/shinysong" target="_blank" rel="noopener"><i class="fab fa-github fa-fw"></i> GitHub</a>
+        <span class="sep">·</span>
+        <a href="https://chaeeunsong.tistory.com/" target="_blank" rel="noopener"><i class="fas fa-pen-nib fa-fw"></i> Blog (Tistory)</a>
+        <span class="sep">·</span>
+        <a href="http://hike.cau.ac.kr/" target="_blank" rel="noopener">HIKE Lab</a>
+      </div>
+    </header>
 
-<div id="post-list" class="flex-grow-1 px-xl-1">
-  {% for post in posts %}
-    <article class="card-wrapper card">
-      <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
-        {% assign card_body_col = '12' %}
+    <hr>
 
-        {% if post.image %}
-          {% assign src = post.image.path | default: post.image %}
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>온톨로지와 지식그래프 구축</strong>: 데이터 모델 설계, 지식 모델링, 시맨틱 웹 표준(RDF, RDFS, OWL, SHACL) 활용</li>
+        <li><strong>데이터 수집과 분석</strong>: 다양한 데이터 소스로부터 데이터 수집, 정제, 분석, 지식 추출</li>
+        <li><strong>엔지니어링</strong>: 지식그래프 구축, 검색·검증 파이프라인(GraphRAG), API 개발, 애플리케이션 개발</li>
+      </ul>
 
-          {% if post.media_subpath %}
-            {% unless src contains '://' %}
-              {% assign src = post.media_subpath
-                | append: '/'
-                | append: src
-                | replace: '///', '/'
-                | replace: '//', '/'
-              %}
-            {% endunless %}
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Language</th>
+              <th>Framework</th>
+              <th>Database</th>
+              <th>Tools / Etc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Python, JavaScript, SQL, SPARQL</td>
+              <td>Docker, Django, Vue.js, Elasticsearch</td>
+              <td>MySQL, PostgreSQL, Virtuoso, Blazegraph, Neo4j</td>
+              <td>Git, Linux/Ubuntu, Figma, QGIS</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-          {% endif %}
+    <hr>
 
-          {% if post.image.lqip %}
-            {% assign lqip = post.image.lqip %}
+    <section id="projects">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <a href="{{ '/projects/' | relative_url }}" class="more-link">상세 보기 →</a>
+      </div>
 
-            {% if post.media_subpath %}
-              {% unless lqip contains 'data:' %}
-                {% assign lqip = post.media_subpath
-                  | append: '/'
-                  | append: lqip
-                  | replace: '///', '/'
-                  | replace: '//', '/'
-                %}
-              {% endunless %}
-            {% endif %}
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>프로젝트</th>
+              <th>주요 내용</th>
+              <th>키워드</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><a href="https://shinysong.github.io/shacl-graphrag/">SHACL-GraphRAG 연구</a></strong></td>
+              <td>제조·금융·지식그래프 데이터에서 SHACL 규칙 생명주기와 하이브리드 GraphRAG 평가 (<a href="https://shinysong.github.io/shacl-graphrag/experiments/actionable-evidence-demo/">데모</a> · <a href="https://shinysong.github.io/shacl-graphrag/experiments/seminar/seminar.pdf">세미나 PDF</a>)</td>
+              <td><code>SHACL</code>, <code>Neo4j</code>, <code>GraphRAG</code></td>
+            </tr>
+            <tr>
+              <td><strong>Shannon</strong></td>
+              <td>지식그래프와 검색 엔진, LLM을 결합한 데이터셋 탐색·검색 시스템</td>
+              <td><code>Knowledge Graph</code>, <code>Elasticsearch</code>, <code>Django</code>, <code>Vue</code>, <code>LLM</code></td>
+            </tr>
+            <tr>
+              <td><strong>데이터맵 표준 · 검색 · 대시보드</strong></td>
+              <td>데이터 카탈로그 어휘 표준(<a href="https://vocab.datahub.kr/spec/datamap/img/datamap-v2-class-model.jpg" target="_blank" rel="noopener">모델</a>), 통합 검색 서비스 및 시각화 대시보드 구축</td>
+              <td><code>Standard</code>, <code>Ontology</code>, <code>Knowledge Graph</code>, <code>Django</code>, <code>Vue</code></td>
+            </tr>
+            <tr>
+              <td><strong>기관 주소를 활용한 Wikidata 연계</strong></td>
+              <td>공공기관 주소 지식모델과 Wikidata 개체 연계 및 3차원 그래프 시각화</td>
+              <td><code>Ontology</code>, <code>Knowledge Graph</code>, <code>Wikidata</code>, <code>3D-force-graph</code></td>
+            </tr>
+            <tr>
+              <td><strong>Entity Search</strong></td>
+              <td>주소 및 기관 개체 식별·연계 검색 도구</td>
+              <td><code>Ontology</code>, <code>Address</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-            {% assign lqip_attr = 'lqip="' | append: lqip | append: '"' %}
-          {% endif %}
+    <hr>
 
-          {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
+    <section id="publications">
+      <h2>Publications</h2>
 
-          <div class="col-md-5">
-            <img src="{{ src }}" alt="{{ alt }}" {{ lqip_attr }}>
-          </div>
+      <h3>Journals</h3>
+      <ol class="pub-list">
+        <li>박하람, 강지우, <strong>송채은</strong>, 안지은, 이정윤, 장소정, 조하연, 차화준, 김학래. (2024). “FAIR 데이터 원칙을 적용한 국내 디지털 아카이브 평가와 개선 방향.” <em>한국기록관리학회지</em>, 24(4), 113–134. <a href="https://doi.org/10.14404/JKSARM.2024.24.4.113" target="_blank" rel="noopener">doi:10.14404/JKSARM.2024.24.4.113</a></li>
+        <li><strong>송채은</strong>, 김학래. (2024). “기관 정보의 의미적 연계를 위한 지식모델 설계와 지식그래프 구축.” <em>디지털콘텐츠학회논문지 (Journal of Digital Contents Society)</em>, 25(10), 2995–3004. <a href="https://doi.org/10.9728/dcs.2024.25.10.2995" target="_blank" rel="noopener">doi:10.9728/dcs.2024.25.10.2995</a></li>
+        <li>박하람, <strong>송채은</strong>, 김장원, 김학래. (2024). “주소 데이터의 상호운용을 위한 주소 모델에 대한 논의.” <em>디지털콘텐츠학회논문지</em>, 25(7), 1891–1900. <a href="https://doi.org/10.9728/dcs.2024.25.7.1891" target="_blank" rel="noopener">doi:10.9728/dcs.2024.25.7.1891</a></li>
+        <li><strong>송채은</strong>, 박하람, 김학래. (2024). “ISO 19160-1:2015 개념모델에 대한 분석과 이해.” <em>디지털콘텐츠학회논문지</em>, 25(5), 1359–1372. <a href="https://doi.org/10.9728/dcs.2024.25.5.1359" target="_blank" rel="noopener">doi:10.9728/dcs.2024.25.5.1359</a></li>
+        <li><strong>송채은</strong>, 김학래. (2023). “도서관 관련 공공데이터의 관리와 활용에 대한 탐색적 분석.” <em>디지털콘텐츠학회논문지</em>, 24(12), 3089–3097. <a href="https://doi.org/10.9728/dcs.2023.24.12.3089" target="_blank" rel="noopener">doi:10.9728/dcs.2023.24.12.3089</a></li>
+        <li><strong>Song, Chaeeun</strong>, and Haklae Kim. (2022). “Considerations in Releasing Public Data: The Case of Local Governments in Korea.” <em>Journal of Information Science</em>. <a href="https://doi.org/10.1177/01655515221106636" target="_blank" rel="noopener">doi:10.1177/01655515221106636</a></li>
+        <li><strong>송채은</strong>, 김학래. (2022). “지방자치단체의 공공데이터 개방 현황 분석과 개선방안.” <em>디지털콘텐츠학회논문지</em>, 23(4), 697–705. <a href="https://doi.org/10.9728/dcs.2022.23.4.697" target="_blank" rel="noopener">doi:10.9728/dcs.2022.23.4.697</a></li>
+        <li>김동준, 김현지, <strong>송채은</strong>, 양지우, 김학래. (2021). “공공데이터포털에 공개된 지방자치단체의 공공데이터 활용 방안.” <em>디지털콘텐츠학회논문지</em>, 22(3), 445–452. <a href="https://doi.org/10.9728/dcs.2021.22.3.445" target="_blank" rel="noopener">doi:10.9728/dcs.2021.22.3.445</a></li>
+      </ol>
 
-          {% assign card_body_col = '7' %}
-        {% endif %}
+      <h3>Standards</h3>
+      <ul>
+        <li>정보통신단체표준(TTAS). “데이터맵 - 제1부: 데이터맵 어휘”</li>
+        <li>정보통신단체표준(TTAS). “데이터맵 - 제2부: 데이터맵 기술을 위한 가이드라인”</li>
+        <li>정보통신단체표준(TTAS). “주소지식모델 - 제1부: 주소체계”</li>
+        <li>정보통신단체표준(TTAS). “주소지식모델 - 제2부: 주소 어휘”</li>
+        <li>정보통신단체표준(TTAS). “주소지식모델 - 제3부: 웹 URI 체계”</li>
+        <li>정보통신단체표준(TTAS). “주소지식모델 - 제4부: 행정구역 어휘”</li>
+      </ul>
+    </section>
 
-        <div class="col-md-{{ card_body_col }}">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
+    <hr>
 
-            <div class="card-text content mt-0 mb-3">
-              <p>{% include post-summary.html %}</p>
-            </div>
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>중앙대학교 일반대학원 문헌정보학과 (정보학 전공)</strong> 박사 수료 (2023.03 ~ 2025.02)</li>
+        <li><strong>중앙대학교 일반대학원 문헌정보학과 (정보학 전공)</strong> 석사 졸업 (2021.03 ~ 2023.02)</li>
+      </ul>
+    </section>
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                {% include datetime.html date=post.date lang=lang %}
+    <hr>
 
-                <!-- categories -->
-                {% if post.categories.size > 0 %}
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    {% for category in post.categories %}
-                      {{ category }}
-                      {%- unless forloop.last -%},{%- endunless -%}
-                    {% endfor %}
-                  </span>
-                {% endif %}
-              </div>
-
-              {% if post.pin %}
-                <div class="pin ms-1">
-                  <i class="fas fa-thumbtack fa-fw"></i>
-                  <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
-                </div>
-              {% endif %}
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
+    <section id="recent-reviews">
+      <div class="section-head">
+        <h2>Recent Paper &amp; Tool Reviews</h2>
+        <a href="{{ '/reviews/' | relative_url }}" class="more-link">전체 18편 보기 →</a>
+      </div>
+      <ul class="compact-post-list">
+        {% for post in site.posts limit: 6 %}
+          <li>
+            <span class="post-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+            <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+            {% if post.pin %}<span class="pin-tag">심층 분석</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</article>
+{% else %}
+  {% assign all_pinned = site.posts | where: 'pin', 'true' %}
+  {% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
+  {% assign posts = '' | split: '' %}
+  {% for post in paginator.posts %}
+    {% assign posts = posts | push: post %}
   {% endfor %}
-</div>
-<!-- #post-list -->
-
-{% if paginator.total_pages > 1 %}
-  {% include post-paginator.html %}
+  <div id="post-list" class="flex-grow-1 px-xl-1">
+    {% for post in posts %}
+      <article class="card-wrapper card">
+        <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+          <div class="col-md-12">
+            <div class="card-body d-flex flex-column">
+              <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
+              <div class="card-text content mt-0 mb-3">
+                <p>{% include post-summary.html %}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
 {% endif %}

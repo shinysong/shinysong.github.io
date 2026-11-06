@@ -2,7 +2,7 @@
 title: 소개
 permalink: /about/
 icon: fas fa-user
-order: 5
+order: 6
 ---
 
 ## About Me
