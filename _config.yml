@@ -12,7 +12,7 @@ social:
   name: Shiny Song
   links:
     - https://github.com/shinysong
-avatar: /assets/img/lab-mark.svg
+avatar: /assets/img/avatar.png
 theme_mode:
 toc: true
 future: true
