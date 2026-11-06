@@ -10,6 +10,8 @@ order: 2
 
 ## 장별 심층 리뷰 (원문 도면·수식·재현성 대조)
 
+- **[그래프 DB와 온톨로지 추론기 비교: Amazon Neptune, Neo4j n10s, RETE·Hypertableau부터 최신 도구까지](/posts/review-neptune-reasoners-rete-hypertableau/)** (2026.11.06)  
+  Amazon Neptune·Virtuoso·Blazegraph·GraphDB·Neo4j(n10s) 비교, 추론기와 SHACL 검증의 역할 분담, Forgy(1982) RETE·Motik 외(2009) Hypertableau 원 논문 알고리즘 및 HermiT 코드 구조, 2026년 오픈소스 생태계와 비교 실험 설계 종합 정리
 - **[의료 온톨로지 RAG 리뷰: Neo4j와 n10s를 이용한 검색·분류 실험](/posts/review-clinical-ontology-rag/)** (2026.11.05)  
   MIMIC-IV 패혈증 분류 실험과 생성 전 의미 필터(`O(C_h)`), 표 1·표 2의 평가 분모 및 ROC 곡선 형태를 장별로 대조한 분석
 - **[rdf2pg 리뷰: 같은 지식 그래프를 RDF와 속성 그래프로 조회하기](/posts/review-rdf2pg/)** (2026.11.05)  
@@ -17,7 +19,7 @@ order: 2
 
 ---
 
-## 주제별 전체 리뷰 (18편)
+## 주제별 전체 리뷰 (19편)
 
 ### GraphRAG & Retrieval
 - [의료 온톨로지 RAG 리뷰: Neo4j와 n10s를 이용한 검색·분류 실험](/posts/review-clinical-ontology-rag/) (2026.11.05)
@@ -25,6 +27,7 @@ order: 2
 - [GraphRAG-Bench 리뷰: 질문 난도와 검색·생성 비용을 나눠 보는 평가](/posts/review-when-graphs-rag/) (2026.11.05)
 
 ### Graph Architecture
+- [그래프 DB와 온톨로지 추론기 비교: Amazon Neptune, Neo4j n10s, RETE·Hypertableau부터 최신 도구까지](/posts/review-neptune-reasoners-rete-hypertableau/) (2026.11.06)
 - [rdf2pg 리뷰: 같은 지식 그래프를 RDF와 속성 그래프로 조회하기](/posts/review-rdf2pg/) (2026.11.05)
 
 ### SHACL & Knowledge Graphs
