@@ -8,14 +8,26 @@ order: 2
 
 지식 그래프, GraphRAG, SHACL, 제조 추적성과 관련된 논문 및 오픈소스 도구를 분석한 리뷰 목록입니다. 주제별로는 [카테고리](/categories/) 또는 [태그](/tags/)에서 모아 볼 수 있습니다.
 
-## 장별 심층 리뷰 (원문 도면·수식·재현성 대조)
+## 장별 심층 리뷰 (원문 도면·수식·재현성 대조, 9편)
 
 - **[그래프 DB와 온톨로지 추론기 비교: Amazon Neptune, Neo4j n10s, RETE·Hypertableau부터 최신 도구까지](/posts/review-neptune-reasoners-rete-hypertableau/)** (2026.11.06)  
   Amazon Neptune·Virtuoso·Blazegraph·GraphDB·Neo4j(n10s) 비교, 추론기와 SHACL 검증의 역할 분담, Forgy(1982) RETE·Motik 외(2009) Hypertableau 원 논문 알고리즘 및 HermiT 코드 구조, 2026년 오픈소스 생태계와 비교 실험 설계 종합 정리
 - **[의료 온톨로지 RAG 리뷰: Neo4j와 n10s를 이용한 검색·분류 실험](/posts/review-clinical-ontology-rag/)** (2026.11.05)  
   MIMIC-IV 패혈증 분류 실험과 생성 전 의미 필터(`O(C_h)`), 표 1·표 2의 평가 분모 및 ROC 곡선 형태를 장별로 대조한 분석
+- **[RAG vs. GraphRAG 리뷰: 상세 질문·관계 질문·답 없는 질문의 차이](/posts/review-rag-vs-graphrag/)** (2026.11.05)  
+  NQ·HotpotQA·MultiHop-RAG·NovelQA·요약 과제에서 7개 RAG/GraphRAG 변형 비교, 추론 전략(Vanilla·Rerank·IRCoT), 정오답 혼동 행렬, Selection/Integration 결합 비용과 Null 질문 취약성 분석
+- **[GraphRAG-Bench 리뷰: 질문 난도와 검색·생성 비용을 나눠 보는 평가](/posts/review-when-graphs-rag/)** (2026.11.05)  
+  ICLR 2026 GraphRAG-Bench의 Level 1–4 질문 난도 체계, Novel·Medical 코퍼스에서의 생성·검색(Evidence Recall vs. Context Relevance)·그래프 위상·질의당 토큰 비용을 장별로 대조한 분석
 - **[rdf2pg 리뷰: 같은 지식 그래프를 RDF와 속성 그래프로 조회하기](/posts/review-rdf2pg/)** (2026.11.05)  
   도메인별 SPARQL 매핑을 통한 RDF→LPG 변환 구조, 4개 그래프 DB 질의 성능 벤치마크, 의미·정보 보존 조건 분석
+- **[OWL과 SHACL 의미론 리뷰: 추론한 그래프를 무엇으로 검증할 것인가](/posts/review-owl-shacl-semantics/)** (2026.11.05)  
+  *Artificial Intelligence* (2026) 게재 논문 분석. $\text{Horn-}\mathcal{ALCHIQ}$ 온톨로지와 SHACL 결합 시 Core Universal Model(엄격한 정준 모델) 의미론, 무한 익명 트리를 피하는 Stratified SHACL 재작성 알고리즘과 복잡도(ExpTime / PTime) 정리
+- **[PolicyKG 리뷰: 정책 문장의 의무·허용·금지를 SHACL로 옮기기](/posts/review-policykg/)** (2026.11.05)  
+  4단계 LangGraph 파이프라인, NL→FOL+Deontic→SHACL 결정론적 컴파일 추적, 3요소 Corpus Adapter를 통한 어휘 정렬, 443/351/69 분모별 평가와 오픈 모델 4종·절제 연구 6종 대조
+- **[SHACL 업데이트 검증 리뷰: 데이터를 바꾸기 전에 제약 보존을 판단하기](/posts/review-shacl-updates/)** (2026.11.05)  
+  ISWC 2025 채택 논문 분석. 조건부 그래프 업데이트($\alpha = (\oplus, \ominus)$)의 정적 보존 검증, 회귀(Regression) 재작성 정리, 조각별 복잡도 및 `SHACL2FOL` + Vampire 4.9 실험 결과 분석
+- **[xpSHACL 리뷰: 검증 실패를 사람이 이해할 수 있는 설명으로 바꾸기](/posts/review-xpshacl/)** (2026.11.05)  
+  VLDB 2025 LLM+Graph 워크숍 논문 분석. 정당화 트리·RAG 문맥·Violation KG 캐시를 결합한 설명 가능 SHACL 검증 구조, LOV 868개 온톨로지 전수 실험 분모(431개 검증·99.48% 캐시 적중)와 반복 실행 시간 분석
 
 ---
 
