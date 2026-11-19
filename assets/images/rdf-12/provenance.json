@@ -14,6 +14,26 @@
       "file": "assets/images/rdf-12/figure-04-asserted-triple-term.svg",
       "sha256": "cd29089c2ec5ec4ea69f12d60a4063760d75c70ab955d1456783e867bcf628b0",
       "description": "Figure 4. An RDF graph containing a triple annotation where the triple term corresponds to an asserted triple"
+    },
+    {
+      "file": "assets/images/rdf-12/excalidraw-rdf11-workarounds.svg",
+      "sha256": "853e8c54c03c3b2725552133e84e8987a3531b4a96f7d797bbcd20cd201cbf31",
+      "description": "Excalidraw diagram (excalidraw-rdf11-workarounds.svg)"
+    },
+    {
+      "file": "assets/images/rdf-12/excalidraw-rdf11-workarounds.excalidraw",
+      "sha256": "d86ea49e57b3ee5dae2f1a3e26ab445f761f84f86551ec9c52e4553bacc23b49",
+      "description": "Excalidraw diagram (excalidraw-rdf11-workarounds.excalidraw)"
+    },
+    {
+      "file": "assets/images/rdf-12/excalidraw-reifier-architecture.svg",
+      "sha256": "6b63976ff47b1a4594185447327a00a8f62da20a3a47ee6060997bbcb3b4d208",
+      "description": "Excalidraw diagram (excalidraw-reifier-architecture.svg)"
+    },
+    {
+      "file": "assets/images/rdf-12/excalidraw-reifier-architecture.excalidraw",
+      "sha256": "af275b8ac581e580e1b4417661525a5e2277773136629124c28e9a2e653d63a3",
+      "description": "Excalidraw diagram (excalidraw-reifier-architecture.excalidraw)"
     }
   ]
 }

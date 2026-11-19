@@ -66,6 +66,16 @@
       ],
       "sha256": "cefd8774eab3d6e359eaf984abed2fc752eccfd2bd102d0d6ab9dad341007393",
       "description": "Table 1. Overview of the features supported by state-of-the-art graph schema formalisms"
+    },
+    {
+      "file": "assets/images/pg-schema/excalidraw-openness-tiers.svg",
+      "sha256": "69438599a2835cc137577e7ee29692c05ac866e84c5ea81eb7c13b52e366b20e",
+      "description": "Excalidraw diagram (excalidraw-openness-tiers.svg)"
+    },
+    {
+      "file": "assets/images/pg-schema/excalidraw-openness-tiers.excalidraw",
+      "sha256": "b47208ad97d8fd47e73b11834e11d25984f2e9909fc49fd4a88faecd2e03b7af",
+      "description": "Excalidraw diagram (excalidraw-openness-tiers.excalidraw)"
     }
   ]
 }
