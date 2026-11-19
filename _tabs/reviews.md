@@ -6,10 +6,12 @@ icon: fas fa-book-open
 order: 2
 ---
 
-지식 그래프, GraphRAG, SHACL, 속성 그래프 표준(PG-Keys·PG-Schema), 제조 추적성과 관련된 논문 및 오픈소스 도구를 분석한 리뷰 목록입니다. 주제별로는 [카테고리](/categories/) 또는 [태그](/tags/)에서 모아 볼 수 있습니다.
+지식 그래프, GraphRAG, SHACL(SHACL 1.2 포함), 속성 그래프 표준(PG-Keys·PG-Schema), 제조 추적성과 관련된 논문 및 표준·오픈소스 도구를 분석한 리뷰 목록입니다. 주제별로는 [카테고리](/categories/) 또는 [태그](/tags/)에서 모아 볼 수 있습니다.
 
-## 장별 심층 리뷰 (원문 도면·수식·재현성 대조, 11편)
+## 장별 심층 리뷰 (원문 도면·수식·표준 명세 대조, 12편)
 
+- **[W3C SHACL 1.2 리뷰: 2017년 SHACL 1.0에서 RDF 1.2·규칙 추론·에이전트 메타데이터까지의 진화](/posts/review-shacl-12/)** (2026.11.19)  
+  W3C SHACL 1.2 Overview 및 SHACL 1.2 Core 명세 분석. 2017년 오리지널 SHACL(1.0)과 SHACL-AF의 배경·한계부터 9개 모듈형 명세 패밀리 재편, RDF 1.2 Reification 검증(`sh:reifierShape`), `sh:ShapeClass`, `sh:targetWhere`, `sh:uniqueValuesFor`, `sh:closed sh:ByTypes`, 불완전 데이터(`sh:incomplete`), LLM 에이전트·코드 생성 어노테이션(`sh:intent`, `sh:agentInstruction`, `sh:unit`) 및 1.0 vs. 1.2 전수 비교
 - **[PG-Schema 리뷰: 다중 상속 타입(PG-Types)과 PG-Keys를 결합한 속성 그래프 스키마 표준 청사진](/posts/review-pg-schema/)** (2026.11.19)  
   ACM SIGMOD 2023 논문 분석. 금융 사기 그래프 스키마 예제, `STRICT`·`LOOSE`·`OPEN` 3계층 개방성 제어와 다중 상속(`&`) 형식 의미론($\oplus$), PG-Keys 통합 제약, SHACL·OWL·상용 그래프 DB 등 21개 스키마 체계의 16개 기능 전수 비교
 - **[PG-Keys 리뷰: 속성 그래프의 노드·간선·속성에 일관되게 적용하는 키와 무결성 제약](/posts/review-pg-keys/)** (2026.11.19)  
@@ -35,7 +37,7 @@ order: 2
 
 ---
 
-## 주제별 전체 리뷰 (21편)
+## 주제별 전체 리뷰 (22편)
 
 ### GraphRAG & Retrieval
 - [의료 온톨로지 RAG 리뷰: Neo4j와 n10s를 이용한 검색·분류 실험](/posts/review-clinical-ontology-rag/) (2026.11.05)
@@ -49,6 +51,7 @@ order: 2
 - [rdf2pg 리뷰: 같은 지식 그래프를 RDF와 속성 그래프로 조회하기](/posts/review-rdf2pg/) (2026.11.05)
 
 ### SHACL & Knowledge Graphs
+- [W3C SHACL 1.2 리뷰: 2017년 SHACL 1.0에서 RDF 1.2·규칙 추론·에이전트 메타데이터까지의 진화](/posts/review-shacl-12/) (2026.11.19)
 - [OWL과 SHACL 의미론 리뷰: 추론한 그래프를 무엇으로 검증할 것인가](/posts/review-owl-shacl-semantics/) (2026.11.05)
 - [PolicyKG 리뷰: 정책 문장의 의무·허용·금지를 SHACL로 옮기기](/posts/review-policykg/) (2026.11.05)
 - [SHACL 업데이트 검증 리뷰: 데이터를 바꾸기 전에 제약 보존을 판단하기](/posts/review-shacl-updates/) (2026.11.05)
