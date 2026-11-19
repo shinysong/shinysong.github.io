@@ -77,6 +77,16 @@
       ],
       "sha256": "44c97d235d36f99beb5a43de221ea85519846815e9b5712d0aae5c726e47026f",
       "description": "Table 3. Architectural ablations"
+    },
+    {
+      "file": "assets/images/policykg/excalidraw-policykg-pipeline.excalidraw",
+      "sha256": "99df7888db05c22bf40914d09e7645704fa200e8cd2459e4863aafbd162399bc",
+      "description": "Excalidraw diagram with embedded KyoboHand font (excalidraw-policykg-pipeline.excalidraw)"
+    },
+    {
+      "file": "assets/images/policykg/excalidraw-policykg-pipeline.svg",
+      "sha256": "addd05a7e5e69ed78f79c9594b0038665bcfc4ca27de4c42127b7848e4f973b1",
+      "description": "Excalidraw diagram with embedded KyoboHand font (excalidraw-policykg-pipeline.svg)"
     }
   ]
 }

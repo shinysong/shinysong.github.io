@@ -65,6 +65,16 @@
       ],
       "sha256": "6eba8a05a556b05d4e6b99a665cbe644702f5d4e092284c3cb19a199ed0a3053",
       "description": "Table 4. Time and storage usage of different methods on HotpotQA"
+    },
+    {
+      "file": "assets/images/rag-vs-graphrag/excalidraw-rag-vs-graphrag-eval.excalidraw",
+      "sha256": "16fc617155cc5af1fce5f1027c09854b346ebe9e8b85dc732b19969e58180b92",
+      "description": "Excalidraw diagram with embedded KyoboHand font (excalidraw-rag-vs-graphrag-eval.excalidraw)"
+    },
+    {
+      "file": "assets/images/rag-vs-graphrag/excalidraw-rag-vs-graphrag-eval.svg",
+      "sha256": "b8873692944736d6bc3b1f46d60f37d2a7c479ccad6d2ab5889e3ac7bfffe3cb",
+      "description": "Excalidraw diagram with embedded KyoboHand font (excalidraw-rag-vs-graphrag-eval.svg)"
     }
   ]
 }

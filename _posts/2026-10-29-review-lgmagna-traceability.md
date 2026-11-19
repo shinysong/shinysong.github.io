@@ -10,7 +10,6 @@ tags:
 - quality-control
 description: 납품한 부품에서 문제가 발견됐을 때는 검사 합격 여부만으로 부족합니다. 어느 자재가 들어갔고 어떤 작업을 거쳤으며 같은 조건으로
   만든 제품이 어디로 납품됐는지 확인해야 합니다. 재작업이나 공정 변경이 있었다면 그 이력과 승인도 함께 따라가야 합니다.
-mermaid: true
 ---
 
 납품한 부품에서 문제가 발견됐을 때는 검사 합격 여부만으로 부족합니다. 어느 자재가 들어갔고 어떤 작업을 거쳤으며 같은 조건으로 만든 제품이 어디로 납품됐는지 확인해야 합니다. 재작업이나 공정 변경이 있었다면 그 이력과 승인도 함께 따라가야 합니다.
@@ -33,20 +32,9 @@ URL의 업로드 경로는 2026년 3월이지만 문서 내부의 버전 날짜�
 
 ## 1. 개발에서 불만 대응까지의 전체 흐름
 
-```mermaid
-flowchart TD
-    A[요구사항·주문 수락 검토] --> B[개발 계획과 설계 검토]
-    B --> C[시제품·시험·개발 검증]
-    C --> D[제품·공정 승인과 생산능력 확인]
-    D --> E[양산·검사·추적 기록]
-    E --> F[납품]
-    F --> G[문제 발견과 영향 범위 조사]
-    G --> H[차단·원인 분석·시정조치]
-    H --> I[관리계획·FMEA·작업표준 갱신]
-    I --> E
-    J[자재·공정·제품 변경] --> K[사전 통보·검토·필요 승인]
-    K --> D
-```
+![자동차 부품 품질 추적과 변경 승인·시정조치(4M) 순환 체계](/assets/images/lgmagna-traceability/excalidraw-lgmagna-apqp-loop.svg)
+
+그림: 자동차 부품 품질 추적과 변경 승인·시정조치(4M) 순환 체계 ([SVG 크게 보기](/assets/images/lgmagna-traceability/excalidraw-lgmagna-apqp-loop.svg) · [Excalidraw 원본](/assets/images/lgmagna-traceability/excalidraw-lgmagna-apqp-loop.excalidraw)).
 
 텍스트로 읽으면 `요구 확인 → 개발·시험 → 승인 → 양산·납품 → 문제 대응 → 문서와 공정 갱신`입니다. 변경은 기존 기록을 덮어쓰는 일이 아니라 적용 시점과 영향, 승인 조건을 관리하는 별도 경로입니다.
 
@@ -75,15 +63,9 @@ flowchart TD
 | 공정·검사 기록 | Q-401 | W-201, L-301 | 적용 조건과 특별특성 측정값 |
 | 납품 전표 | D-501 | L-301, W-201, M-101 | 어떤 이력의 물품을 납품했는지 |
 
-```mermaid
-flowchart TD
-    A[입고 자재 M-101] --> B[작업 지시서 W-201]
-    B --> C[제조 로트 L-301]
-    C --> D[납품 전표 D-501]
-    B --> E[실제 공정 조건]
-    C --> F[검사·특별특성 기록]
-    D -. 이력 조회 .-> A
-```
+![자재-작업지시-로트-납품 연결 및 역방향 이력 조회 사슬](/assets/images/lgmagna-traceability/excalidraw-lgmagna-lot-chain.svg)
+
+그림: 자재-작업지시-로트-납품 연결 및 역방향 이력 조회 사슬 ([SVG 크게 보기](/assets/images/lgmagna-traceability/excalidraw-lgmagna-lot-chain.svg) · [Excalidraw 원본](/assets/images/lgmagna-traceability/excalidraw-lgmagna-lot-chain.excalidraw)).
 
 이 연결로 조사할 수 있는 질문은 “M-101이 투입된 납품은 무엇인가”, “D-501과 관련된 작업 조건은 무엇인가”와 같습니다. 단, 기록의 연결이 곧 인과관계의 증명은 아닙니다. 같은 자재가 사용됐다는 사실은 조사 대상을 좁히는 근거이며 실제 원인은 공정·검사 결과를 함께 분석해야 합니다.
 

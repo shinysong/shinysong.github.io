@@ -13,7 +13,6 @@ tags:
   - rete
   - hypertableau
 description: "Amazon Neptune과 Virtuoso·Blazegraph·GraphDB·Neo4j(n10s)의 구조적 차이, RDFS·OWL·Datalog 추론기와 SHACL 검증의 역할 분담, RETE(1982)와 Hypertableau(2009) 원 논문 알고리즘 및 HermiT 내부 코드 구조, 그리고 2026년 기준 오픈소스 생태계와 비교 실험 설계까지 종합 정리한다."
-mermaid: true
 pin: true
 ---
 
@@ -48,14 +47,9 @@ pin: true
 
 Neptune에서는 SPARQL을 계속 써도 된다. Neptune의 데이터 모델과 쿼리 언어는 다음과 같이 연결된다([AWS 쿼리 문서](https://docs.aws.amazon.com/neptune/latest/userguide/access-graph.html)).
 
-```mermaid
-flowchart LR
-    A[Neptune Database] --> B[RDF 데이터]
-    A --> C[속성 그래프 데이터]
-    B --> D[SPARQL]
-    C --> E[openCypher]
-    C --> F[Gremlin]
-```
+![Amazon Neptune Database의 이중 그래프 모델과 질의 언어 지원](/assets/images/neptune-reasoners/excalidraw-neptune-dual-models.svg)
+
+그림: Amazon Neptune Database의 이중 그래프 모델과 질의 언어 지원 ([SVG 크게 보기](/assets/images/neptune-reasoners/excalidraw-neptune-dual-models.svg) · [Excalidraw 원본](/assets/images/neptune-reasoners/excalidraw-neptune-dual-models.excalidraw)).
 
 - **RDF**: 익숙한 IRI·트리플·네임드 그래프를 SPARQL로 조회한다.
 - **속성 그래프**: 노드·엣지·속성을 openCypher 또는 Gremlin으로 조회한다.
@@ -150,16 +144,9 @@ ex:로봇A   rdf:type        ex:산업용로봇 .
 
 내부 구조는 GraphDB 같은 규칙 기반 전방 추론기(forward-chaining reasoner)를 보면 이해하기 쉽다.
 
-```mermaid
-flowchart TD
-    A["명시적 사실<br/>로봇A는 용접로봇"] --> C["조건 매칭<br/>트리플 인덱스 조회·조인"]
-    B["온톨로지·규칙<br/>용접로봇은 산업용로봇"] --> C
-    C --> D["규칙 적용<br/>결론 생성"]
-    D --> E{"새로운 결론인가?"}
-    E -->|예| F["추론된 사실 추가"]
-    F --> C
-    E -->|더 이상 없음| G["추론 완료<br/>질의에 활용"]
-```
+![전방향 연쇄(Forward-Chaining) 규칙 기반 사실 도출 반복 구조](/assets/images/neptune-reasoners/excalidraw-forward-chaining-loop.svg)
+
+그림: 전방향 연쇄(Forward-Chaining) 규칙 기반 사실 도출 반복 구조 ([SVG 크게 보기](/assets/images/neptune-reasoners/excalidraw-forward-chaining-loop.svg) · [Excalidraw 원본](/assets/images/neptune-reasoners/excalidraw-forward-chaining-loop.excalidraw)).
 
 구성 요소를 풀면 다음과 같다.
 
@@ -247,15 +234,9 @@ SELECT ?robot WHERE {
 
 외부 추론기를 사용하는 경우에는 두 DB의 구성이 상당히 비슷해진다.
 
-```mermaid
-flowchart LR
-    A[Neo4j 또는 Neptune] --> B[필요한 사실 추출·변환]
-    B --> C[외부 추론기]
-    D[공통 온톨로지·규칙] --> C
-    C --> E[도출된 사실과 근거]
-    E --> F[답변·검토에 활용]
-    E -. 선택적 저장 .-> A
-```
+![그래프 DB와 외부 추론기(HermiT/ELK 등) 연동 브리지 구조](/assets/images/neptune-reasoners/excalidraw-external-reasoner-bridge.svg)
+
+그림: 그래프 DB와 외부 추론기(HermiT/ELK 등) 연동 브리지 구조 ([SVG 크게 보기](/assets/images/neptune-reasoners/excalidraw-external-reasoner-bridge.svg) · [Excalidraw 원본](/assets/images/neptune-reasoners/excalidraw-external-reasoner-bridge.excalidraw)).
 
 이때 DB 차이보다 어떤 규칙을 주었는지, 어떤 사실을 추론기에 전달했는지, 도출 결과를 언제 갱신하는지가 결과를 크게 좌우한다. AWS도 Neptune과 별도 OWL·SHACL 서비스를 조합하는 아키텍처를 제시한다([AWS 참조 구조](https://aws.amazon.com/blogs/database/build-an-ontology-driven-semantic-layer-with-amazon-neptune/)).
 
@@ -294,17 +275,9 @@ AWS의 Semantic Layer 설계 문서는 다음과 같이 명시한다([AWS 설계
 
 실무적으로 참고할 만한 대표적인 아키텍처는 MUFG의 구성이다. 은행 업무 문서를 바탕으로 온톨로지와 지점별 지식 그래프를 만들고, 이를 이용해 업무 흐름도를 생성·비교하는 사례다. AWS가 설명한 요청 처리 구조를 단순화하면 다음과 같다.
 
-```mermaid
-flowchart LR
-    Q[사용자 요청] --> A[AI 에이전트]
-    A --> N["Neptune<br/>온톨로지·업무 그래프 조회"]
-    N --> H["HermiT<br/>OWL 논리 추론"]
-    N --> E[조회된 근거]
-    H --> I[도출된 사실]
-    E --> L["Bedrock LLM<br/>근거를 인용해 결과 생성"]
-    I --> L
-    L --> U[업무 전문가 검토]
-```
+![AWS 아키텍처 사례: Neptune 조회 + HermiT 추론 + Bedrock 근거 생성](/assets/images/neptune-reasoners/excalidraw-neptune-hermit-bedrock.svg)
+
+그림: AWS 아키텍처 사례: Neptune 조회 + HermiT 추론 + Bedrock 근거 생성 ([SVG 크게 보기](/assets/images/neptune-reasoners/excalidraw-neptune-hermit-bedrock.svg) · [Excalidraw 원본](/assets/images/neptune-reasoners/excalidraw-neptune-hermit-bedrock.excalidraw)).
 
 게시물은 요청에 필요한 온톨로지와 부분 그래프를 Neptune에서 가져와 HermiT에 전달하고, 도출된 사실을 에이전트가 활용한다고 구체적으로 설명한다. 즉, 여기서 “온톨로지 기반 추론”은 단순 홍보 표현만은 아니고, 별도 논리 추론기가 실제 아키텍처에 들어간다. 다만 이 글은 AWS·고객의 사례 보고이므로, 제목의 작업량 감소 수치를 HermiT 단독 효과나 독립적으로 검증된 일반 성능으로 해석하면 안 된다.
 
@@ -425,22 +398,9 @@ EL·QL·RL을 일렬로 놓고 “낮음 → 높음”으로 비교하면 안 �
 
 실제로 시스템에 배치하는 구조는 크게 세 가지다.
 
-```mermaid
-flowchart TB
-    subgraph A["DB 내장형"]
-        A1[데이터·온톨로지] --> A2[DB 내부 추론]
-        A2 --> A3[추론을 반영한 조회]
-    end
-    subgraph B["외부 추론형"]
-        B1[DB에서 필요한 데이터 추출] --> B2[HermiT·ELK 등]
-        B2 --> B3[결론·일관성 결과]
-        B3 --> B4[답변에 활용 또는 별도 저장]
-    end
-    subgraph C["질의 재작성형"]
-        C1[질문·온톨로지·매핑] --> C2[Ontop 등의 질의 변환]
-        C2 --> C3[원본 DB에서 실행]
-    end
-```
+![지식 그래프 추론기 배치 3대 패턴 비교](/assets/images/neptune-reasoners/excalidraw-three-reasoner-patterns.svg)
+
+그림: 지식 그래프 추론기 배치 3대 패턴 비교 ([SVG 크게 보기](/assets/images/neptune-reasoners/excalidraw-three-reasoner-patterns.svg) · [Excalidraw 원본](/assets/images/neptune-reasoners/excalidraw-three-reasoner-patterns.excalidraw)).
 
 외부 추론형에서는 특히 **어느 범위의 사실과 공리를 전달했는지**가 중요하다. 작은 부분 그래프만 검사해 모순이 없었다고 해서 전체 데이터도 일관적이라고 결론 내릴 수는 없다.
 
@@ -568,16 +528,9 @@ Jena는 ‘규칙을 실행하는 장치’를 포함한 RDF 프레임워크다(
 
 이 단계는 DB에서 두 테이블을 공통 키로 `JOIN`한 뒤 결과 행을 만드는 작업과 비슷하다. 새 결론이 다른 규칙의 입력이 되면 이어서 계산한다.
 
-```mermaid
-flowchart LR
-    A[원본 RDF Model] --> C[규칙 조건 매칭]
-    B[규칙 집합] --> C
-    C --> D[변수 바인딩·결론 생성]
-    D --> E[도출된 트리플]
-    E --> C
-    A --> F[InfModel을 통한 조회]
-    E --> F
-```
+![Apache Jena 규칙 추론기(InfModel)의 도출 및 통합 조회 구조](/assets/images/neptune-reasoners/excalidraw-jena-infmodel-loop.svg)
+
+그림: Apache Jena 규칙 추론기(InfModel)의 도출 및 통합 조회 구조 ([SVG 크게 보기](/assets/images/neptune-reasoners/excalidraw-jena-infmodel-loop.svg) · [Excalidraw 원본](/assets/images/neptune-reasoners/excalidraw-jena-infmodel-loop.excalidraw)).
 
 Jena는 매번 모든 조합을 처음부터 비교하지 않도록 **RETE** 방식으로 조건의 중간 매칭 결과를 기억하는 전방 엔진을 제공한다. 반대로 질문을 목표로 삼아 필요한 규칙을 거슬러 찾는 후방 엔진, 두 방식을 섞는 혼합 엔진도 있다.
 
@@ -595,20 +548,9 @@ A는 전기식이 아니다.
 
 여기서는 `A가 유압식`이라는 결론이 따라온다. HermiT는 이런 선택지(disjunction)·부정(negation)·개수 제한(cardinality restriction) 등이 섞인 OWL 논리를 처리한다.
 
-```mermaid
-flowchart TD
-    A[OWL 온톨로지] --> B[OWL API로 읽기]
-    B --> C[논리식 정규화·DL 절로 변환]
-    C --> D[Hypertableau 탐색]
-    D --> E[확정되는 사실 전파]
-    E --> F{선택이 필요한가?}
-    F -->|예| G[가능한 경우를 분기]
-    F -->|아니요| H[모순·완료 여부 검사]
-    G --> H
-    H -->|모순| I[되돌아가 다른 경우 검사]
-    I --> D
-    H -->|모순 없이 완료| J[일관적인 상황이 가능]
-```
+![HermiT 하이퍼타블로(Hypertableau) 탐색 및 모순 백트래킹 흐름](/assets/images/neptune-reasoners/excalidraw-hermit-hypertableau.svg)
+
+그림: HermiT 하이퍼타블로(Hypertableau) 탐색 및 모순 백트래킹 흐름 ([SVG 크게 보기](/assets/images/neptune-reasoners/excalidraw-hermit-hypertableau.svg) · [Excalidraw 원본](/assets/images/neptune-reasoners/excalidraw-hermit-hypertableau.excalidraw)).
 
 핵심 구성은 다음과 같다.
 
@@ -810,17 +752,9 @@ Charles L. Forgy(카네기멜런대학교)의 논문 [〈Rete: A Fast Algorithm 
 
 단순한 프로그램은 새 주문이 들어올 때마다 고객과 주문을 읽고 규칙들을 처음부터 검사한다. 반면 RETE는 먼저 규칙들을 **‘검사 단계가 연결된 망(network)’**으로 만들어 둔다(라틴어 *rete*가 ‘망, 그물’을 뜻함).
 
-```mermaid
-flowchart TD
-    A["고객 정보"] --> B["VIP 고객만 통과<br/>결과 저장 (알파 메모리)"]
-    C["주문 정보"] --> D["10만 원 이상 주문만 통과<br/>결과 저장 (알파 메모리)"]
-    B --> E["고객 ID가 같은 고객·주문 연결<br/>(베타·조인 노드)"]
-    D --> E
-    E --> F["규칙 1의 조건 충족<br/>(터미널 노드)"]
+![RETE 네트워크: 알파 메모리(단일 조건)와 베타 조인 노드(다중 조건) 공유](/assets/images/neptune-reasoners/excalidraw-rete-alpha-beta.svg)
 
-    B --> G["생일 조건 확인"]
-    G --> H["규칙 2의 조건 충족<br/>(터미널 노드)"]
-```
+그림: RETE 네트워크: 알파 메모리(단일 조건)와 베타 조인 노드(다중 조건) 공유 ([SVG 크게 보기](/assets/images/neptune-reasoners/excalidraw-rete-alpha-beta.svg) · [Excalidraw 원본](/assets/images/neptune-reasoners/excalidraw-rete-alpha-beta.excalidraw)).
 
 이 구조에는 크게 세 가지 노드 역할이 있다([Drools 공식 RETE 설명](https://docs.jboss.org/drools/release/latest/drools-docs/docs-website/drools/rule-engine/index.html)).
 

@@ -65,6 +65,16 @@
       ],
       "sha256": "04161d6cf4015e12b30e85978993dfb94ddebe21ce23da3e9fbfe43c5d4a3d85",
       "description": "Figure 5. Part of the austere canonical model for Example 6.5"
+    },
+    {
+      "file": "assets/images/owl-shacl-semantics/excalidraw-owl-shacl-rewriting.excalidraw",
+      "sha256": "dd3b1ca5d3b5c965ef5326cc320b7a885ff9cb9239e8a7574bc78598780ad786",
+      "description": "Excalidraw diagram with embedded KyoboHand font (excalidraw-owl-shacl-rewriting.excalidraw)"
+    },
+    {
+      "file": "assets/images/owl-shacl-semantics/excalidraw-owl-shacl-rewriting.svg",
+      "sha256": "063e4214a2bbd5d5478eab57d788349944a2c4338e0316c6500138ab0fb44d6a",
+      "description": "Excalidraw diagram with embedded KyoboHand font (excalidraw-owl-shacl-rewriting.svg)"
     }
   ]
 }
