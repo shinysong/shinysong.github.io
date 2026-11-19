@@ -6,10 +6,14 @@ icon: fas fa-book-open
 order: 2
 ---
 
-지식 그래프, GraphRAG, SHACL, 제조 추적성과 관련된 논문 및 오픈소스 도구를 분석한 리뷰 목록입니다. 주제별로는 [카테고리](/categories/) 또는 [태그](/tags/)에서 모아 볼 수 있습니다.
+지식 그래프, GraphRAG, SHACL, 속성 그래프 표준(PG-Keys·PG-Schema), 제조 추적성과 관련된 논문 및 오픈소스 도구를 분석한 리뷰 목록입니다. 주제별로는 [카테고리](/categories/) 또는 [태그](/tags/)에서 모아 볼 수 있습니다.
 
-## 장별 심층 리뷰 (원문 도면·수식·재현성 대조, 9편)
+## 장별 심층 리뷰 (원문 도면·수식·재현성 대조, 11편)
 
+- **[PG-Schema 리뷰: 다중 상속 타입(PG-Types)과 PG-Keys를 결합한 속성 그래프 스키마 표준 청사진](/posts/review-pg-schema/)** (2026.11.19)  
+  ACM SIGMOD 2023 논문 분석. 금융 사기 그래프 스키마 예제, `STRICT`·`LOOSE`·`OPEN` 3계층 개방성 제어와 다중 상속(`&`) 형식 의미론($\oplus$), PG-Keys 통합 제약, SHACL·OWL·상용 그래프 DB 등 21개 스키마 체계의 16개 기능 전수 비교
+- **[PG-Keys 리뷰: 속성 그래프의 노드·간선·속성에 일관되게 적용하는 키와 무결성 제약](/posts/review-pg-keys/)** (2026.11.19)  
+  ACM SIGMOD 2021 논문 분석. `EXCLUSIVE`·`MANDATORY`·`SINGLETON` 조합으로 정의되는 4대 키 계층, 질의 기반 범위(Scope)와 이웃 위상 서술자(Descriptor), 조건 (K1)–(K3)의 Cypher 검증 질의 재작성 및 SHACL·OWL(`owl:hasKey`) 비교
 - **[그래프 DB와 온톨로지 추론기 비교: Amazon Neptune, Neo4j n10s, RETE·Hypertableau부터 최신 도구까지](/posts/review-neptune-reasoners-rete-hypertableau/)** (2026.11.06)  
   Amazon Neptune·Virtuoso·Blazegraph·GraphDB·Neo4j(n10s) 비교, 추론기와 SHACL 검증의 역할 분담, Forgy(1982) RETE·Motik 외(2009) Hypertableau 원 논문 알고리즘 및 HermiT 코드 구조, 2026년 오픈소스 생태계와 비교 실험 설계 종합 정리
 - **[의료 온톨로지 RAG 리뷰: Neo4j와 n10s를 이용한 검색·분류 실험](/posts/review-clinical-ontology-rag/)** (2026.11.05)  
@@ -31,7 +35,7 @@ order: 2
 
 ---
 
-## 주제별 전체 리뷰 (19편)
+## 주제별 전체 리뷰 (21편)
 
 ### GraphRAG & Retrieval
 - [의료 온톨로지 RAG 리뷰: Neo4j와 n10s를 이용한 검색·분류 실험](/posts/review-clinical-ontology-rag/) (2026.11.05)
@@ -39,6 +43,8 @@ order: 2
 - [GraphRAG-Bench 리뷰: 질문 난도와 검색·생성 비용을 나눠 보는 평가](/posts/review-when-graphs-rag/) (2026.11.05)
 
 ### Graph Architecture
+- [PG-Schema 리뷰: 다중 상속 타입(PG-Types)과 PG-Keys를 결합한 속성 그래프 스키마 표준 청사진](/posts/review-pg-schema/) (2026.11.19)
+- [PG-Keys 리뷰: 속성 그래프의 노드·간선·속성에 일관되게 적용하는 키와 무결성 제약](/posts/review-pg-keys/) (2026.11.19)
 - [그래프 DB와 온톨로지 추론기 비교: Amazon Neptune, Neo4j n10s, RETE·Hypertableau부터 최신 도구까지](/posts/review-neptune-reasoners-rete-hypertableau/) (2026.11.06)
 - [rdf2pg 리뷰: 같은 지식 그래프를 RDF와 속성 그래프로 조회하기](/posts/review-rdf2pg/) (2026.11.05)
 
